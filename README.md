@@ -1,0 +1,2 @@
+# ndlngramviewer_v2
+2023年1月からリニューアルしたNDL Ngram Viewerのソースコード等一式
