@@ -37,7 +37,8 @@ public class RDB2JsonBatch extends AbstractBatch{
 		ObjectMapper mapper = new ObjectMapper();
 		Path rdbpath= Paths.get(params[0]);
 		Path outputgzpath= Paths.get(params[1]);
-		int skipthresh=(params.length >= 3)?Integer.parseInt(params[2]):4;
+		String datasetName=params[2];
+		int skipthresh=(params.length >= 4)?Integer.parseInt(params[3]):4;
 		Map<Long, Long> yearsummap = new HashMap<Long, Long>();
 		int gramcnt=0;
 		int  cntngram=0;
@@ -81,7 +82,7 @@ public class RDB2JsonBatch extends AbstractBatch{
 							            if(yearmap.size()==1)break;
 							            JSONObject ngramyearjson =  new JSONObject(yearmap);
 							            if(sum<skipthresh)break;
-							            writer.writeLine(keyString+"\t"+sum+"\t"+ngramyearjson);
+							            writer.writeLine(keyString+"\t"+sum+"\t"+ngramyearjson+"\t"+datasetName);
 							            cntngram+=1;
 							            yearmap.forEach((k, v) -> yearsummap.merge(k, v, (v1, v2) -> v1 + v2));
 							            break;
