@@ -1,0 +1,22 @@
+es:
+  endPoint: localhost:9210
+server:
+  port: 9981
+  servlet:
+    contextPath: /ngramviewer/
+  max-http-header-size : 80000 
+  compression:
+    enabled: true
+    mime-types: application/json,text/html
+spring:
+  http:
+    encoding:
+      enable: false
+  thymeleaf: 
+    mode: HTML
+    cache: false
+    encoding: UTF-8
+  main:
+    banner-mode: "off"
+management:
+    add-application-context-header: false

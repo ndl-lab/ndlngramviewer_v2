@@ -1,0 +1,9 @@
+version: '3'
+services:
+  redis:
+    image: "eqalpha/keydb:x86_64_v6.3.1"
+    command: keydb-server --save "" --maxmemory "250gb" --maxmemory-policy "allkeys-lfu" --lfu-decay-time 600000000 --lfu-log-factor 0  --io-threads 6
+    ports:
+      - "26379:6379"
+    volumes:
+      - "./redisdata:/data"

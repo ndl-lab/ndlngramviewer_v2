@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  elasticsearchngram:
+    build: ./dockerfile
+    environment:
+      - discovery.type=single-node
+      - cluster.name=docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms4096m -Xmx4096m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - 9210:9200
+    volumes:
+      - ./esdata:/usr/share/elasticsearch/data
+  kibanangram:
+    image: docker.elastic.co/kibana/kibana:7.10.0
+    ports:
+      - 5611:5601
+

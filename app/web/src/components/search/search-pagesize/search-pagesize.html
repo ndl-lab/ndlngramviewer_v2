@@ -1,0 +1,8 @@
+<div class="search-pagesize is-size-7">
+  <!-- <label>{{$l("label-pagesize")}}</label> -->
+  <div class="select">
+    <select :value="proppagesize" v-on:input="sizeChange">
+      <option v-for="v in values" :value="v">{{v}}件</option>
+    </select>
+  </div>
+</div>

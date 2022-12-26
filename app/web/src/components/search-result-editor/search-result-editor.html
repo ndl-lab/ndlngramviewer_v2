@@ -1,0 +1,53 @@
+<div class="search-result-editor">
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">編集画面</p>
+            <button
+                type="button"
+                class="delete"
+                @click="handleCancel" />
+        </header>
+        <section class="modal-card-body">
+            <line-chart :chart-data="datacollection"></line-chart>
+            <div v-if="totalingkeywordlist.length>0">
+                <b-table
+                :data="totalingkeywordlist"
+                :key="tableDataKey">
+                    <b-table-column field="ngramkeyword" label="合算キーワード" v-slot="props">
+                        {{props.row.ngramkeyword}}
+                    </b-table-column>
+                    <b-table-column field="count" label="合算後の総頻度" v-slot="props">
+                        {{props.row.count}}
+                    </b-table-column>
+                    
+                    <b-table-column label="キャンセル" v-slot="props">
+                        <button class="button is-small is-danger" @click.prevent="totalingDeleteRow(props.row)">
+                            <b-icon icon="delete" size="is-small"></b-icon>
+                        </button>
+                    </b-table-column>
+                </b-table>
+                <b-button
+                label="合算結果を含めたリンクを取得する"
+                type="is-success"
+                @click="totalingResult" />
+                <b-button label="合算結果を含めたTSVを取得する" type="is-info" @click="totalingDownload"/>
+            </div>
+            <b-table
+                :header-checkable=false
+                :data="resultkeywordlist"
+                :columns="resultcolumns"
+                :checked-rows.sync="checkedRows"
+                checkable>
+            </b-table>
+        </section>
+        <footer class="modal-card-foot">
+            <b-button
+                label="編集画面を閉じる"
+                @click="handleCancel" />
+            <b-button
+                label="選択したキーワードを合算する"
+                type="is-primary"
+                @click="totaling" />
+        </footer>
+    </div>
+</div>
