@@ -27,7 +27,7 @@
 infra-docker/es_dockerに、サービス提供用Elasticsearchのdocker-composeの設定ファイル一式があります。infra-docker/README.mdの指示に従ってElasticsearchコンテナを起動してください。
 
 ### 3. インデックスの初期化
-動作確認を兼ねて、ビルド済アプリケーションを置いたディレクトリで下記のコマンドを実行してください。
+ビルド済アプリケーションを置いたディレクトリで下記のコマンドを実行してください。
 
 **【注意！】Elasticsearchコンテナのデータが初期化されますので気を付けてください**
 ```
@@ -38,19 +38,13 @@ java -jar ngramviewer-0.1.jar batch create-index all
 自分で投入用データの作成を行う場合には、datacreationtoolsディレクトリ内のREADME.mdを参考にしてください。
 
 
-当館が用意したデータを投入する場合、NDL Ngram Viewer version1の全データを次のURLから公開しています。
-
-https://lab.ndl.go.jp/dataset/ngramviewer/sorted-tosho-pdmngram.json.gz
-(20.7GB)
-
-例えば以下のようにして、データをダウンロードしてください。
-```
-curl -OL https://lab.ndl.go.jp/dataset/ngramviewer/sorted-merge-ngram.json.gz
-```
-
-投入用データのライセンス情報については次のリポジトリを参照してください。
+当館が用意したデータを投入する場合、必要な全データセットを次のリポジトリから公開しています。
 
 https://github.com/ndl-lab/ndlngramdata
+
+上記のリポジトリから公開しているデータセットを利用した投入データの作成方法については、
+[datacreationtools/4_merge/README.md](datacreationtools/4_merge/README.md)
+を参考にしてください。
 
 
 ### 5. 投入用データのインデックス
