@@ -3,7 +3,7 @@
 ## 概要
 図書資料約97万点及び雑誌資料132万点を対象に、2022年5月からNDLラボの実験サービスとして公開している[NDL Ngram Viewer](https://lab.ndl.go.jp/ngramviewer/)のソースコードです。
 
-対象範囲の大幅な拡大に伴って、2022年5月から2023年1月まで公開していた[Version 1](https://github.com/ndl-lab/ndlngramviewer_v1)に変更を加えたため、リポジトリを分けています。
+2023年1月に対象範囲を大幅に拡大したことに伴い、2022年5月から2023年1月まで公開していた[Version 1](https://github.com/ndl-lab/ndlngramviewer_v1)に変更を加えたため、リポジトリを分けています。
 
 
 ## このリポジトリについて
