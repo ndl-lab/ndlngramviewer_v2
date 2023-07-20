@@ -21,7 +21,6 @@
 ### 1. アプリケーションの準備
 自分でビルドする場合は、appディレクトリ内のREADME.mdを参考にしてください。
 
-本リポジトリが配布するパッケージを利用する場合にはjavaのリリースバイナリを下記からダウンロードして適当な場所に展開してください。
 
 ### 2. サービス提供用Elasticsearchの準備
 infra-docker/es_dockerに、サービス提供用Elasticsearchのdocker-composeの設定ファイル一式があります。infra-docker/README.mdの指示に従ってElasticsearchコンテナを起動してください。
